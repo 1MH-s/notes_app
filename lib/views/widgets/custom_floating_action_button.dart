@@ -1,5 +1,8 @@
-import 'package:flutter/cupertino.dart';
+//Flutter:|||||||||||||
 import 'package:flutter/material.dart';
+
+//Widgets:|||||||||||||||||||||||||||||
+import 'package:notes_app/views/widgets/custom_text_field.dart';
 
 class CustomFloatingActionButton extends StatelessWidget {
   const CustomFloatingActionButton({
@@ -33,8 +36,13 @@ class AddNoteView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        const TextField(),
-        const TextField(),
+        SizedBox(height: 24),
+        const CustomTextField(
+          hintText: "Title",
+        ),
+        const CustomTextField(
+          hintText: "Content",
+        ),
         ElevatedButton(onPressed: () {}, child: const Text("add")),
       ],
     );
