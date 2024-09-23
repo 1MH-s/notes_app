@@ -14,6 +14,7 @@ class NotesApp extends StatelessWidget {
       title: 'Notes app changing test',
       theme: ThemeData(
         useMaterial3: true,
+        brightness: Brightness.dark,
       ),
       home: const Text('Notes app'),
     );
