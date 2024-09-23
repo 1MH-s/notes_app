@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 
+//Views:
+import 'package:notes_app/views/notes_view.dart';
+
 void main() {
   runApp(const NotesApp());
 }
@@ -15,7 +18,7 @@ class NotesApp extends StatelessWidget {
         useMaterial3: true,
         brightness: Brightness.dark,
       ),
-      home: const Text('Notes app'),
+      home: const NotesView(),
     );
   }
 }
