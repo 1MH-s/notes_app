@@ -11,7 +11,7 @@ class NotesApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Notes app changing test',
+      title: 'Notes app',
       theme: ThemeData(
         useMaterial3: true,
         brightness: Brightness.dark,
