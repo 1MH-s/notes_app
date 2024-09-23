@@ -42,6 +42,7 @@ class AddNoteView extends StatelessWidget {
         ),
         const CustomTextField(
           hintText: "Content",
+          maxLines: 5,
         ),
         ElevatedButton(onPressed: () {}, child: const Text("add")),
       ],
