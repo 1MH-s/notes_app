@@ -11,9 +11,9 @@ class NotesApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Notes app',
+      title: 'Notes app changing test',
       theme: ThemeData(
-        useMaterial3: false,
+        useMaterial3: true,
       ),
       home: const Text('Notes app'),
     );
