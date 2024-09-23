@@ -1,7 +1,7 @@
-//Flutter:
+//Flutter:|||||||||||||
 import 'package:flutter/material.dart';
 
-//Widgets:
+//Widgets:||||||||||||||||||||||
 import 'package:notes_app/views/widgets/note_item.dart';
 
 class NotesListView extends StatelessWidget {

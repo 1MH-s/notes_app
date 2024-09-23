@@ -2,7 +2,7 @@
 import 'package:flutter/material.dart';
 
 //Widgets:|||||||||||||||||||||||||||||
-import 'package:notes_app/views/widgets/custom_text_field.dart';
+import 'package:notes_app/views/widgets/add_note_view.dart';
 
 class CustomFloatingActionButton extends StatelessWidget {
   const CustomFloatingActionButton({
@@ -23,29 +23,6 @@ class CustomFloatingActionButton extends StatelessWidget {
         );
       },
       child: const Icon(Icons.add),
-    );
-  }
-}
-
-class AddNoteView extends StatelessWidget {
-  const AddNoteView({
-    super.key,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    return Column(
-      children: [
-        SizedBox(height: 24),
-        const CustomTextField(
-          hintText: "Title",
-        ),
-        const CustomTextField(
-          hintText: "Content",
-          maxLines: 5,
-        ),
-        ElevatedButton(onPressed: () {}, child: const Text("add")),
-      ],
     );
   }
 }
