@@ -13,7 +13,7 @@ class NotesApp extends StatelessWidget {
     return MaterialApp(
       title: 'Notes app',
       theme: ThemeData(
-        useMaterial3: true,
+        useMaterial3: false,
       ),
       home: const Text('Notes app'),
     );
