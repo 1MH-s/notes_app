@@ -3,12 +3,9 @@ import 'package:flutter/material.dart';
 
 //Widgets:|||||||||||||||||||||||||||||
 import 'package:notes_app/views/widgets/custom_text_field.dart';
-import 'package:notes_app/views/widgets/custom_elevated_button.dart';
 
-class AddNoteView extends StatelessWidget {
-  const AddNoteView({
-    super.key,
-  });
+class EditNoteViewBody extends StatelessWidget {
+  const EditNoteViewBody({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -23,15 +20,6 @@ class AddNoteView extends StatelessWidget {
             hintText: "Content",
             maxLines: 8,
           ),
-          SizedBox(height: 24),
-          CustomElevatedButton(
-            child: SizedBox(
-              width: 100,
-              height: 50,
-              child: Center(child: Text("add")),
-            ),
-          ),
-          SizedBox(height: 24),
         ],
       ),
     );

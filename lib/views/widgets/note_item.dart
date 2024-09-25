@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:notes_app/views/edit_note_view.dart';
 
 class NoteItem extends StatelessWidget {
   const NoteItem({
@@ -14,6 +15,9 @@ class NoteItem extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.end,
         children: [
           ListTile(
+            onTap: () {
+              Navigator.of(context).pushNamed(EditNoteView.id);
+            },
             contentPadding: const EdgeInsets.symmetric(horizontal: 8),
             title: const Text(
               "Flutter tips",
