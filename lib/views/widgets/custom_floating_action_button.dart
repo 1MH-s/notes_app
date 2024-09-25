@@ -2,7 +2,7 @@
 import 'package:flutter/material.dart';
 
 //Widgets:|||||||||||||||||||||||||||||
-import 'package:notes_app/views/widgets/add_note_view.dart';
+import 'package:notes_app/views/widgets/add_note_sheet.dart';
 
 class CustomFloatingActionButton extends StatelessWidget {
   const CustomFloatingActionButton({
