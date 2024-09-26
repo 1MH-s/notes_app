@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:notes_app/models/note_model.dart';
 import 'package:notes_app/views/edit_note_view.dart';
 
 class NoteItem extends StatelessWidget {
   const NoteItem({
     super.key,
+    required this.note,
   });
-
+  final NoteModel note;
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -19,13 +21,13 @@ class NoteItem extends StatelessWidget {
               Navigator.of(context).pushNamed(EditNoteView.id);
             },
             contentPadding: const EdgeInsets.symmetric(horizontal: 8),
-            title: const Text(
-              "Flutter tips",
-              style: TextStyle(fontSize: 24, color: Colors.black),
+            title: Text(
+              note.title,
+              style: const TextStyle(fontSize: 24, color: Colors.black),
             ),
-            subtitle: const Text(
-              "Build your Career with Mohammad Sameer",
-              style: TextStyle(color: Colors.black54),
+            subtitle: Text(
+              note.content,
+              style: const TextStyle(color: Colors.black54),
             ),
             trailing: IconButton(
               onPressed: () {},
@@ -35,11 +37,11 @@ class NoteItem extends StatelessWidget {
               ),
             ),
           ),
-          const Padding(
-            padding: EdgeInsets.all(16.0),
+          Padding(
+            padding: const EdgeInsets.all(16.0),
             child: Text(
-              "The date of the note",
-              style: TextStyle(color: Colors.black54),
+              note.date,
+              style: const TextStyle(color: Colors.black54),
             ),
           ),
         ],
