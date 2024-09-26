@@ -15,24 +15,27 @@ class AddNoteView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SingleChildScrollView(
-      child: BlocConsumer<AddNoteCubit, AddNoteState>(
-        listener: (context, state) {
-          if (state is AddNoteSuccess) {
-            //Pop the sheet:
-            Navigator.of(context).pop();
-          } else if (state is AddNoteFailure) {
-            print("Adding the note failed"
-                "withe error: ${state.errorMessage}");
-          }
-        },
-        builder: (context, state) {
-          return state is AddNoteLoading
-              ? const Center(
-                  child: CircularProgressIndicator(),
-                )
-              : const AddNoteForm();
-        },
+    return BlocProvider(
+      create: (context) => AddNoteCubit(),
+      child: SingleChildScrollView(
+        child: BlocConsumer<AddNoteCubit, AddNoteState>(
+          listener: (context, state) {
+            if (state is AddNoteSuccess) {
+              //Pop the sheet:
+              Navigator.of(context).pop();
+            } else if (state is AddNoteFailure) {
+              print("Adding the note failed"
+                  "withe error: ${state.errorMessage}");
+            }
+          },
+          builder: (context, state) {
+            return state is AddNoteLoading
+                ? const Center(
+                    child: CircularProgressIndicator(),
+                  )
+                : const AddNoteForm();
+          },
+        ),
       ),
     );
   }
