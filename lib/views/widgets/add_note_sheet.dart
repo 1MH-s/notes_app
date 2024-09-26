@@ -17,22 +17,25 @@ class AddNoteView extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocProvider(
       create: (context) => AddNoteCubit(),
-      child: SingleChildScrollView(
-        child: BlocConsumer<AddNoteCubit, AddNoteState>(listener: (context, state) {
-          if (state is AddNoteSuccess) {
-            //Pop the sheet:
-            Navigator.of(context).pop();
-          } else if (state is AddNoteFailure) {
-            print("Adding the note failed "
-                "withe error: ${state.errorMessage}");
-          }
-        }, builder: (context, state) {
-          return AbsorbPointer(
-            // If loading don't allow the user to press any thing:
-            absorbing: state is AddNoteLoading ? true : false,
-            child: const AddNoteForm(),
-          );
-        }),
+      child: Padding(
+        padding: EdgeInsets.only(bottom: MediaQuery.of(context).viewInsets.bottom),
+        child: SingleChildScrollView(
+          child: BlocConsumer<AddNoteCubit, AddNoteState>(listener: (context, state) {
+            if (state is AddNoteSuccess) {
+              //Pop the sheet:
+              Navigator.of(context).pop();
+            } else if (state is AddNoteFailure) {
+              print("Adding the note failed "
+                  "withe error: ${state.errorMessage}");
+            }
+          }, builder: (context, state) {
+            return AbsorbPointer(
+              // If loading don't allow the user to press any thing:
+              absorbing: state is AddNoteLoading ? true : false,
+              child: const AddNoteForm(),
+            );
+          }),
+        ),
       ),
     );
   }
