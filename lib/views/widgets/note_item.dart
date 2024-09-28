@@ -20,7 +20,9 @@ class NoteItem extends StatelessWidget {
         children: [
           ListTile(
             onTap: () {
-              Navigator.of(context).pushNamed(EditNoteView.id);
+              Navigator.of(context).push(
+                MaterialPageRoute(builder: (context) => EditNoteView(note: note)),
+              );
             },
             contentPadding: const EdgeInsets.symmetric(horizontal: 8),
             title: Text(
