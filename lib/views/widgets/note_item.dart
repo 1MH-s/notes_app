@@ -13,8 +13,8 @@ class NoteItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      decoration: const BoxDecoration(
-          color: Colors.blueGrey, borderRadius: BorderRadius.all(Radius.circular(10))),
+      decoration: BoxDecoration(
+          color: Color(note.color), borderRadius: const BorderRadius.all(Radius.circular(10))),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.end,
         children: [
